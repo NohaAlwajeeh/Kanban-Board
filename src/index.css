@@ -1,8 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root{
+  --primary-color:#00579F;
+  --text-color:#62748E;
+}
 body {
   font-family: 'Tajawal', sans-serif;
   direction: rtl;
+}
+.logo-bg{
+  background: #f6f6f6;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+        display: grid
+;
+    grid-auto-flow: row;
+    grid-row-gap: 10px;
+    place-items: center;
+}
+.logo-bg .text-blue-custom{
+  color: var(--text-color);
 }

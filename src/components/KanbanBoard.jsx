@@ -67,10 +67,11 @@ const KanbanBoard = () => {
     <div className="flex h-screen dark:text-zinc-300">
       {/* Sidebar */}
       <div className={` dark:bg-zinc-800 p-4 w-64 transition-all duration-300 ${sidebarOpen ? "block" : "hidden md:block"}`}>
-        <div className="mb-6">
+        <div className="mb-6 logo-bg">
     <img src={logo} alt="الشعار" className="w-32 mx-auto" />
+            <span className="text-1xl font-normal text-blue-custom">اسم الشركة سمارت لايف </span>
+
   </div>
-        <span className="text-2xl font-bold mb-6">اسم الشركة سمارت لايف </span>
         <ul className="space-y-3">
           <li><a href="#" className="hover:text-blue-400">الرئيسية</a></li>
           <li><a href="#" className="hover:text-blue-400">المهام</a></li>
