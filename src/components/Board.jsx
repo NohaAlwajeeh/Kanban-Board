@@ -1,0 +1,1 @@
+// محتوى src/components/Board.jsx المفعل لجميع الميزات

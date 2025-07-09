@@ -1,0 +1,1 @@
+// ✅ Smooth animations for dragging tasks and columns

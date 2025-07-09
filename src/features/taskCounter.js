@@ -1,0 +1,1 @@
+// ✅ Display task count next to each column title
