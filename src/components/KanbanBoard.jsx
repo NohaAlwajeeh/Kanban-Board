@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Column from "./Column";
 import logo from '../assets/logo.png';
+import searchIcon from '../assets/search.svg';
 
 const defaultColumns = [
   { id: "todo", title: "قائمة المهام", next: "in-progress" },
@@ -67,13 +68,14 @@ const KanbanBoard = () => {
     <div className="flex h-screen dark:text-zinc-300">
       {/* Sidebar */}
       <div className={` dark:bg-zinc-800 p-4 w-64 transition-all duration-300 ${sidebarOpen ? "block" : "hidden md:block"}`}>
-        <div className="mb-6 logo-bg">
+        <div className="mb-6 logo-bg dark:bg-zinc-800">
     <img src={logo} alt="الشعار" className="w-32 mx-auto" />
-            <span className="text-1xl font-normal text-blue-custom">اسم الشركة سمارت لايف </span>
+            <span className="text-1xl font-normal text-blue-custom dark:text-white">اسم الشركة سمارت لايف </span>
 
   </div>
         <ul className="space-y-3">
           <li><a href="#" className="hover:text-blue-400">الرئيسية</a></li>
+          <li><a href="#" className="hover:text-blue-400">المهام</a></li>
           <li><a href="#" className="hover:text-blue-400">المهام</a></li>
           <li><a href="#" className="hover:text-blue-400">الإعدادات</a></li>
         </ul>
@@ -84,13 +86,21 @@ const KanbanBoard = () => {
         {/* Top menu */}
         <div className="flex items-center justify-between mb-4">
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="md:hidden text-xl">☰</button>
-          <input
-            type="text"
-            placeholder="🔍 بحث عن مهمة..."
-            className="px-4 py-2 rounded border w-full max-w-xs text-black"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
+         <div className="relative w-full max-w-xs">
+  <img
+    src={searchIcon}
+    alt="بحث"
+    className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none"
+  />
+  <input
+    type="text"
+    placeholder="بحث عن مهمة..."
+    className="pl-10 pr-4 py-2 rounded border w-full text-black"
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+  />
+</div>
+
           <button
             className="ml-4 px-4 py-2 bg-zinc-800 text-white rounded"
             onClick={toggleDark}

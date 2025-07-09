@@ -4,6 +4,18 @@ const TaskModal = ({ onClose, onSubmit }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  const getCurrentDateTime = () => {
+    const now = new Date();
+    return now.toLocaleString("ar-EG", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+    });
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white dark:bg-zinc-800 p-6 rounded-lg w-full max-w-md">
@@ -26,7 +38,14 @@ const TaskModal = ({ onClose, onSubmit }) => {
             إلغاء
           </button>
           <button
-            onClick={() => onSubmit({ title, description })}
+            onClick={() =>
+              onSubmit({
+                title,
+                description,
+                date: getCurrentDateTime(),
+                attachments: 0,
+              })
+            }
             className="bg-blue-600 text-white px-4 py-2 rounded"
           >
             إضافة
